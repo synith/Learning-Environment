@@ -21,7 +21,7 @@ public class ValueReferenceTypes : MonoBehaviour
         secondStruct.value = 5;
         Debug.Log("Struct: " + firstStruct.value);
         */
-
+        /*
         NativeArray<MyTestStruct> testNativeArray = new NativeArray<MyTestStruct>(new MyTestStruct[] {
         new MyTestStruct(1),
         new MyTestStruct(2),
@@ -35,6 +35,15 @@ public class ValueReferenceTypes : MonoBehaviour
             Debug.Log(testNativeArray[i].value);
         }
         testNativeArray.Dispose();
+        */
+        int i = 5;
+        Increment(ref i);
+        Debug.Log(i);
+
+    }
+    public void Increment(ref int i)
+    {
+        i++;
     }
 }
 public class MyTestClass
