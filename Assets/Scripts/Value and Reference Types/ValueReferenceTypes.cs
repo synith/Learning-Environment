@@ -5,6 +5,7 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
 using Unity.Burst;
+using System;
 
 public class ValueReferenceTypes : MonoBehaviour
 {
@@ -36,11 +37,23 @@ public class ValueReferenceTypes : MonoBehaviour
         }
         testNativeArray.Dispose();
         */
+        /*
         int i = 5;
         Increment(ref i);
         Debug.Log(i);
+        */
 
+        int? i = null; // ? makes this a nullable value type
+        Nullable<int> j = null; // using the ? is the same as using Nullable<T>
+
+        WeaponTypes? playerHoldingWeaponType = null; // an example of how to set a weapon type enumerator to null if the player wasn't holding any weapons.
     }
+    public enum WeaponTypes
+    {
+        Sword,
+        Pistol,
+    }
+
     public void Increment(ref int i)
     {
         i++;
